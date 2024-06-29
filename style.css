@@ -161,17 +161,17 @@ button {
   background-color: rgb(220, 197, 197, 0.4);
 }
 .conversation--1 , .api--answer {
-  text-align: left;
+  text-align: right;
   width: 50%;
-  align-self: flex-end;
+  align-self: flex-start;
   background-color: rgb(247, 215, 154);
 }
 
 .conversation--2 , .user--question {
-  text-align: right;
+  text-align: left;
   width: 50%;
   background-color: rgb(167, 165, 165);
-  align-self: flex-start;
+  align-self: flex-end;
   color: #f7d79a;
   background-color: rgb(66, 140, 143);
 }
