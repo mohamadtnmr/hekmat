@@ -4,8 +4,74 @@
   box-sizing: border-box;
 }
 
+/*page font                                          */
+@font-face {
+  font-family: Vazir;
+  src: url('Vazir.eot');
+  src: url('Vazir.eot?#iefix') format('embedded-opentype'),
+       url('Vazir.woff2') format('woff2'),
+       url('Vazir.woff') format('woff'),
+       url('Vazir.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Vazir;
+  src: url('Vazir-Bold.eot');
+  src: url('Vazir-Bold.eot?#iefix') format('embedded-opentype'),
+       url('Vazir-Bold.woff2') format('woff2'),
+       url('Vazir-Bold.woff') format('woff'),
+       url('Vazir-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: Vazir;
+  src: url('Vazir-Black.eot');
+  src: url('Vazir-Black.eot?#iefix') format('embedded-opentype'),
+       url('Vazir-Black.woff2') format('woff2'),
+       url('Vazir-Black.woff') format('woff'),
+       url('Vazir-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: Vazir;
+  src: url('Vazir-Medium.eot');
+  src: url('Vazir-Medium.eot?#iefix') format('embedded-opentype'),
+       url('Vazir-Medium.woff2') format('woff2'),
+       url('Vazir-Medium.woff') format('woff'),
+       url('Vazir-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: Vazir;
+  src: url('Vazir-Light.eot');
+  src: url('Vazir-Light.eot?#iefix') format('embedded-opentype'),
+       url('Vazir-Light.woff2') format('woff2'),
+       url('Vazir-Light.woff') format('woff'),
+       url('Vazir-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: Vazir;
+  src: url('Vazir-Thin.eot');
+  src: url('Vazir-Thin.eot?#iefix') format('embedded-opentype'),
+       url('Vazir-Thin.woff2') format('woff2'),
+       url('Vazir-Thin.woff') format('woff'),
+       url('Vazir-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+
+/*body                                          */
+
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Vazir", sans-serif;
+  height: 100%;
 }
 a {
   text-decoration: none;
@@ -24,14 +90,15 @@ button {
   display: none !important;
 }
 
-.logo {
-  font-size: 60px;
-  padding: 0;
-}
+
+
+
+/*main app                                         */
 
 .main--app {
   display: flex;
-  height: 70%;
+  min-height: 100vh;
+  height: 100%;
   width: 100%;
   overflow: hidden;
 }
@@ -55,11 +122,13 @@ button {
   color: #f7d79a;
 }
 
+
 /* chat room */
 .chat--room {
   display: flex;
   flex: 2;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -68,7 +137,7 @@ button {
   background-size: cover;
 }
 
-/* chat nav */
+
 
 /*chat body*/
 .chat--body {
@@ -78,11 +147,9 @@ button {
   overflow-y: hidden;
   display: flex;
   flex-direction: column;
-  transition: overflow-y 0.3s ease;
 }
 .chat--body:hover {
   overflow-y: scroll;
-  transition: overflow-y 0.3s ease;
 }
 
 .conversation {
@@ -93,14 +160,14 @@ button {
   text-align: justify;
   background-color: rgb(220, 197, 197, 0.4);
 }
-.conversation--1 {
+.conversation--1 , .api--answer {
   text-align: left;
   width: 50%;
   align-self: flex-end;
   background-color: rgb(247, 215, 154);
 }
 
-.conversation--2 {
+.conversation--2 , .user--question {
   text-align: right;
   width: 50%;
   background-color: rgb(167, 165, 165);
@@ -151,42 +218,10 @@ button {
   align-items: center;
 }
 
-/* side header */
 
-.chat {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.chat a {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  width: 100%;
-  padding: 2px;
-  text-align: center;
-}
-.chat button:focus + .dropdown,
-.dropdown:hover {
-  display: flex;
-}
 
-.dropdown {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #428c8f;
-  border-radius: 10px;
-  display: none;
-  padding: 4px;
-}
-.chat:hover .dropdown {
-  display: block;
-}
 
-.dropdown--link {
-}
+
 
 /*side body.................*/
 .side--body {
@@ -232,6 +267,38 @@ button {
   justify-content: space-between;
   gap: 5px;
 }
+
+
+.chat {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.chat a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  padding: 2px;
+  text-align: center;
+}
+.chat button:hover + .dropdown,
+.dropdown:hover {
+  display: flex;
+}
+
+.dropdown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #428c8f;
+  border-radius: 10px;
+  display: none;
+  padding: 4px;
+}
+
+
 
 /*side footer...................*/
 .side--foot {

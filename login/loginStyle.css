@@ -39,15 +39,20 @@ html {
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   gap: 10px;
 }
 .number--inp {
-  background-color: #f7d79a;
   background-color: #428c8f;
+  color: rgb(246, 245, 245);
   border-radius: 10px;
+  padding: 5px;
   border: none;
   height: 40px;
+}
+input::placeholder{
+  color: aliceblue;
 }
 .login--btn {
   border: none;
@@ -61,4 +66,6 @@ html {
 .navbar,
 .welcome {
   font-size: 40px;
+  text-align: justify;
+
 }
